@@ -4,8 +4,7 @@
 
 AI can generate scenes.
 
-It cannot maintain a world.
-
+It cannot maintain a world.  
 It cannot enforce continuity.  
 It cannot protect character psychology.  
 It cannot defend against plot holes.  
@@ -35,18 +34,19 @@ AI Video Production Skills is a model-agnostic, production-grade framework for b
 
 It provides:
 
-- Character / Set / Voice anti-drift systems
-- Truth validation with citation requirements
-- Plausibility scoring frameworks
-- World-state continuity tracking
-- Narrative red-teaming
-- Audience simulation personas
-- Structured shot planning
-- Prompt packaging standards
-- QC grading systems
-- Regen learning loops
-- Cost routing and budget gates
-- Tiered model escalation policies
+- Character / Set / Voice anti-drift systems  
+- Truth validation with citation requirements  
+- Plausibility scoring frameworks  
+- World-state continuity tracking  
+- Narrative red-teaming  
+- Audience simulation personas  
+- Structured shot planning  
+- Prompt packaging standards  
+- QC grading systems  
+- Regen learning loops  
+- Cost routing and budget gates  
+- Tiered model escalation policies  
+- Full execution logging  
 
 This is not a prompt collection.
 
@@ -54,91 +54,114 @@ It is infrastructure.
 
 ---
 
-## Why This Exists
+## 🚀 Start Here
 
-Most AI storytelling systems fail for predictable reasons:
+Before generating anything, read:
 
-- Characters drift visually and psychologically.
-- Continuity collapses across scenes.
-- Stakes feel artificial.
-- Research is shallow or incorrect.
-- Regeneration loops spiral out of control.
-- Costs escalate without guardrails.
-- Prompts grow longer instead of systems growing stronger.
+👉 **docs/how_to_run.md**
 
-This framework addresses those failures directly.
+That guide defines:
+
+- Project structure
+- Execution order
+- Gate enforcement
+- Loop behavior
+- Lock discipline
+- Budget controls
+- Logging requirements
+- Proxy → final escalation policy
+
+Do not begin generation before reading it.
 
 ---
 
 ## Core Design Principles
 
-1. Artifact-Based Memory  
-   No reliance on chat history. All continuity is externalized.
+### 1. Artifact-Based Memory  
+No reliance on chat history. All continuity is externalized.
 
-2. Gate Enforcement  
-   Nothing progresses without passing validation checks.
+### 2. Gate Enforcement  
+Nothing progresses without passing validation checks.
 
-3. Loop Architecture  
-   The system is closed-loop, not linear.
+### 3. Loop Architecture  
+The system is closed-loop, not linear.
 
-4. Model-Agnostic Routing  
-   Works with Claude, GPT, Gemini, MiniMax, Qwen, or any future model.
+### 4. Model-Agnostic Routing  
+Works with Claude, GPT, Gemini, MiniMax, Qwen, or any future model.
 
-5. Cost Awareness  
-   Budget gates prevent silent overspend.
+### 5. Cost Awareness  
+Budget gates prevent silent overspend.
 
-6. Composability  
-   Skills operate independently and integrate cleanly.
+### 6. Composability  
+Skills operate independently and integrate cleanly.
+
+---
+
+## Artifact Discipline
+
+Everything is versioned.
+
+- No artifact is overwritten.  
+- Logs are append-only.  
+- World-state updates require diffs.  
+- Lock updates require version increments.  
+- Generation must reference explicit artifacts.  
+
+If it is not in a versioned artifact, it does not exist.
 
 ---
 
 ## System Architecture
 
-Narrative production is structured across five layers:
+Narrative production is structured across six layers:
 
-1. Narrative Layer  
+1. **Narrative Layer**  
    Story structure, character arcs.
 
-2. Validation Layer  
+2. **Validation Layer**  
    Research, plausibility, red-team, audience simulation.
 
-3. Continuity Layer  
-   Character locks, set locks, world state tracking.
+3. **Continuity Layer**  
+   Character locks, set locks, voice locks, world-state tracking.
 
-4. Production Layer  
+4. **Production Layer**  
    Shot planning, prompt packaging, proxy rendering, QC, regen learning.
 
-5. Governance Layer  
+5. **Governance Layer**  
    Model routing and budget enforcement.
 
-See `ARCHITECTURE.md` for full diagram.
+6. **Observability Layer**  
+   Run logging, cost tracking, regen tracking, audit history.
+
+See `docs/ARCHITECTURE.md` for full system diagram.
 
 ---
 
 ## Closed-Loop Workflow
 
-Story
-↓
-Research → Plausibility → Continuity
-↓
-Locks
-↓
-Shot Plan
-↓
-GenPack
-↓
-Proxy Render
-↓
-QC
-↓
-Regen Learning
-↓
-Cost Optimization
-
+Story  
+↓  
+Research → Plausibility → Continuity  
+↓  
+Locks  
+↓  
+Shot Plan  
+↓  
+GenPack  
+↓  
+Proxy Render  
+↓  
+QC  
+↓  
+Regen Learning  
+↓  
+Cost Optimization  
 
 Failure at any stage loops backward.
 
 There is no forward-only mode.
+
+See `docs/loop_architecture.md`.
 
 ---
 
@@ -146,79 +169,98 @@ There is no forward-only mode.
 
 This framework separates intelligence into tiers:
 
-Throughput Tier  
+**Throughput Tier**  
 - Formatting  
 - Extraction  
 - Structured generation  
 
-Judgment Tier  
+**Judgment Tier**  
 - Red-team  
 - Arbitration  
-- High-impact rewrites  
+- Psychological validation  
 
-Research Tier  
+**Research Tier**  
 - Citation-heavy synthesis  
 
-Vision Tier  
+**Vision Tier**  
 - Visual continuity validation  
+- Spatial reasoning  
 
 Always use the cheapest viable tier.  
 Escalate only when gates fail.
+
+See `docs/model_policy.md`.
 
 ---
 
 ## Included Skills
 
-Core skills include:
-
+### Narrative
 - story-architect  
 - script-breakdown  
+- character-psychology  
+- dialogue-consistency-check  
+
+### Validation
+- research-agent  
+- plausibility-auditor  
+- cultural-check  
+- narrative-red-team  
+- audience-simulator  
+
+### Continuity
 - character-lock  
 - set-lock  
 - voice-lock  
-- research-agent  
-- plausibility-auditor  
-- character-psychology  
-- narrative-red-team  
-- audience-simulator  
 - world-state-tracker  
+- continuity-supervisor  
+
+### Production
 - shot-planner  
 - prompt-packager  
+- storyboard-generator  
 - qc-grader  
 - regen-analyzer  
+
+### Governance
 - cost-optimizer  
 - model-router  
 - budget-gates  
 
+### Observability
+- run-logger  
+
 Each skill defines:
 
-- Inputs  
-- Outputs  
+- Required inputs  
+- Required artifacts  
 - Pass / fail gates  
 - Escalation policy  
-- Versioned artifacts  
+- Loop integration  
+- Logging requirements  
 
 ---
 
 ## Example Project Included
 
 See:
-examples/demo_short_film/
 
+`examples/demo_short_film/`
 
 The demo includes:
 
 - Versioned locks  
 - Truth packet  
 - Plausibility audit  
-- World state + state diff  
+- World state + state diffs  
 - Shot list  
 - GenPack  
 - QC report  
 - Regen rules  
 - Cost report  
+- Run logs  
 
-This example proves the system structure works.
+The example proves the system structure works end-to-end.
 
 ---
 
@@ -226,12 +268,12 @@ This example proves the system structure works.
 
 This framework assumes:
 
-- 50+ scenes
-- Hundreds of shots
-- Multi-model routing
-- Iterative QC loops
-- Budget ceilings
-- Long-running pipelines
+- 50+ scenes  
+- Hundreds of shots  
+- Multi-model routing  
+- Iterative QC loops  
+- Budget ceilings  
+- Long-running pipelines  
 
 If a system cannot scale without collapsing continuity, it is not production-ready.
 
@@ -239,10 +281,10 @@ If a system cannot scale without collapsing continuity, it is not production-rea
 
 ## What This Is Not
 
-- Not a screenplay template
-- Not a one-click generator
-- Not a vendor-locked pipeline
-- Not a collection of “magic prompts”
+- Not a screenplay template  
+- Not a one-click generator  
+- Not a vendor-locked pipeline  
+- Not a collection of “magic prompts”  
 
 This is production infrastructure.
 
@@ -250,32 +292,26 @@ This is production infrastructure.
 
 ## Getting Started
 
-1. Read `ARCHITECTURE.md`
-2. Review `docs/loop_architecture.md`
-3. Choose a data spine from `docs/data_spine_templates.md`
-4. Start with:
+1. Read `docs/how_to_run.md` (mandatory)  
+2. Review `docs/ARCHITECTURE.md`  
+3. Review `docs/loop_architecture.md`  
+4. Choose a data spine from `docs/data_spine_templates.md`  
+5. Initialize locks and world-state  
+6. Only then begin generation  
 
-   story-architect  
-   script-breakdown  
-   character-lock  
-   set-lock  
-   voice-lock  
-   research-agent  
-   plausibility-auditor  
-
-5. Only then proceed to generation.
+Do not generate scenes before locks and validation loops are established.
 
 ---
 
 ## Roadmap
 
-- CLI orchestration starter
-- Reference Google Sheets template
-- Vision-based continuity validation
-- Dialogue drift detection
-- Editing heuristic skill
-- Cost dashboard UI example
-- Expanded example project
+- CLI orchestration starter  
+- Reference Google Sheets template  
+- Vision-based continuity validation  
+- Dialogue drift detection  
+- Editing heuristic skill  
+- Cost dashboard UI example  
+- Expanded example project  
 
 ---
 
@@ -285,11 +321,13 @@ See `CONTRIBUTING.md`.
 
 Contributions must:
 
-- Define gates
-- Define artifacts
-- Remain model-agnostic
-- Preserve loop integrity
-- Strengthen system discipline
+- Define gates  
+- Define artifacts  
+- Remain model-agnostic  
+- Preserve loop integrity  
+- Respect budget policy  
+- Respect model policy  
+- Strengthen system discipline  
 
 ---
 
